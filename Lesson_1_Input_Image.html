@@ -12,19 +12,19 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md sticky-top bg-dark py-3" data-bs-theme="dark">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><img src="https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_no_text-1.svg" style="height:100%"></span><span>OpenCV JS Lesson</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-6"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-6">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span style="color: rgb(255, 255, 255);">Lesson</span></a>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#"><span style="color: rgb(255, 255, 255);">Lesson</span></a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="Lesson_1_Input_Image.html">Lesson 1 Input Image</a><a class="dropdown-item" href="Lesson_2_Colors_Spaces.html">Lesson 2 Colors Spaces</a><a class="dropdown-item" href="#">Lesson 3 Transformations </a><a class="dropdown-item" href="#">Lesson 4 Thresholding </a><a class="dropdown-item" href="#">Lesson 5 Smoothing</a><a class="dropdown-item" href="#">Lesson 6 Morphological</a><a class="dropdown-item" href="#">Lesson 7 Canny Edge Detection</a><a class="dropdown-item" href="#">Lesson 8 Contours</a><a class="dropdown-item" href="#">Lesson 9 Histograms</a><a class="dropdown-item" href="#">Lesson 10 Template Matching</a><a class="dropdown-item" href="#">Lesson 11 Hough Transform</a></div>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
-                <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
+                <div class="d-md-none my-2"><a class="btn btn-light me-2" role="button" href="./Lesson_1_Input_Image.html" download="">Download HTML</a><a class="btn btn-primary" role="button" href="./assets/js/import_image.js" download="">Download JS</a></div>
             </div>
-            <div class="d-none d-md-block"><a class="btn btn-light me-2" role="button" href="#">Button</a><a class="btn btn-primary" role="button" href="#">Button</a></div>
+            <div class="d-none d-md-block"><a class="btn btn-light me-2" role="button" href="./Lesson_1_Input_Image.html" download="">Download HTML</a><a class="btn btn-primary" role="button" href="./assets/js/import_image.js" download="">Download JS</a></div>
         </div>
     </nav>
     <main>
@@ -32,7 +32,6 @@
             <h1>Lesson 1 Input Image</h1>
             <div class="row">
                 <div class="col-md-6"><input type="file" id="fileInput"></div>
-                <div class="col-md-6"><a href="./Lesson_1_Input_Image.html" download=""><button class="btn btn-primary" type="button" style="margin: 4px;">Download HTML</button></a><a href="./assets/js/import_image.js" download=""><button class="btn btn-primary" type="button" style="margin: 4px;">Download JS</button></a></div>
             </div>
         </div>
         <div class="container">
