@@ -30,16 +30,15 @@
     <main>
         <div>
             <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Gray</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">inRange</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Gray</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">inRange</a></li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active" role="tabpanel" id="tab-1">
+                <div class="tab-pane" role="tabpanel" id="tab-1">
                     <div class="container">
                         <h1>Lesson 2 Colors Spaces</h1>
                         <div class="row">
                             <div class="col-md-6"><input type="file" id="fileInput"></div>
-                            <div class="col-md-6"></div>
                         </div>
                     </div>
                     <div class="container">
@@ -49,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="tab-2">
+                <div class="tab-pane active" role="tabpanel" id="tab-2">
                     <div class="container">
                         <h1>Lesson 2 Colors Spaces</h1>
                         <div class="row">
@@ -57,12 +56,86 @@
                             <div class="col-md-6"></div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row" style="margin: initial;">
-                            <div class="col-md-12"><input type="number" id="low-RED" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"><input type="number" id="low-GREEN" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"><input type="number" id="low-BLUE" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"></div>
-                        </div>
-                        <div class="row" style="margin: initial;">
-                            <div class="col-md-12"><input type="number" id="high-RED" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"><input type="number" id="high-GREEN" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"><input type="number" id="high-BLUE" value="0" onchange="updateValue()" style="width:75px" min="0" max="255"></div>
+                    <div class="container" style="padding: 10px;width: 100%;">
+                        <div class="dropend show justify-content-center align-items-center"><button class="btn btn-primary dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button">Parameter</button>
+                            <div class="dropdown-menu show" data-bs-popper="none" style="width: 60vw;font-size:16px;">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="low-RED" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">Low Red :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="low-RED-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="low-GREEN" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">Low Green :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="low-GREEN-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="low-BLUE" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">Low Blue :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="low-BLUE-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="high-RED" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">High Red :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="high-RED-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="high-GREEN" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">High Green :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="high-GREEN-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="high-BLUE" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">High Blue :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="high-BLUE-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="container">
