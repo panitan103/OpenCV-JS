@@ -4,8 +4,9 @@ let inputElement = document.getElementById('fileInput');
 
 const canvas = document.createElement("canvas");
 canvas.id="canvasOutput"
-canvas.style.width = "100%";
-document.getElementById("image-container-output").appendChild(canvas)
+canvas.classList.add("img-fluid");
+canvas.style.width = "auto";
+document.getElementById("image-container").appendChild(canvas)
 
 inputElement.addEventListener('change', (e) => {
   imgElement.src = URL.createObjectURL(e.target.files[0]);
@@ -27,8 +28,10 @@ let inputElement_1 = document.getElementById('fileInput-1');
 
 const canvas_1 = document.createElement("canvas");
 canvas_1.id="canvasOutput-1"
-canvas_1.style.width = "100%";
-document.getElementById("image-container-output-1").appendChild(canvas_1)
+canvas_1.classList.add("img-fluid");
+canvas_1.style.width = "auto";
+document.getElementById("image-container-1").appendChild(canvas_1)
+
 
 inputElement_1.addEventListener('change', (e) => {
   imgElement_1.src = URL.createObjectURL(e.target.files[0]);
