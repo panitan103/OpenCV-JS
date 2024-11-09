@@ -5,7 +5,7 @@ let inputElement = document.getElementById('fileInput');
 const canvas = document.createElement("canvas");
 canvas.id="canvasOutput"
 canvas.classList.add("img-fluid");
-canvas.style.width = "auto";
+//canvas.style.width = "auto";
 document.getElementById("image-container").appendChild(canvas)
 
 inputElement.addEventListener('change', (e) => {
@@ -98,4 +98,6 @@ function updateValue() {
     low.delete();
     high.delete();
 }
+
+
 
