@@ -116,15 +116,48 @@
     <main style="padding: 1rem;">
         <div style="padding: initial;">
             <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1" style="font-size: 20px;">Gray</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" style="font-size: 20px;">inRange</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1" style="font-size: 20px;">Resize</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" style="font-size: 20px;">Crop</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3" style="font-size: 20px;">Rotate</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" role="tabpanel" id="tab-1">
                     <div class="container">
-                        <h1>Lesson 2 Colors Spaces</h1>
+                        <h1>Lesson 3&nbsp;<span style="color: inherit;">Transformations</span></h1>
                         <div class="row">
                             <div class="col-md-6"><input type="file" id="fileInput"></div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding: 10px;width: 100%;">
+                        <div class="dropend justify-content-center align-items-center"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button">Parameter</button>
+                            <div class="dropdown-menu" style="width: 60vw;font-size:16px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="size-width" min="0" max="255" value="100" step="1" onchange="reSize()">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">X :&nbsp;</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="size-width-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="size-height" onchange="reSize()" min="0" max="255" value="100" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">Y :&nbsp;</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="size-height-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="container">
@@ -136,7 +169,7 @@
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-2">
                     <div class="container">
-                        <h1>Lesson 2 Colors Spaces</h1>
+                        <h1>Lesson 3&nbsp;<br><span style="color: inherit;">Transformations</span></h1>
                         <div class="row">
                             <div class="col-md-6"><input type="file" id="fileInput-1"></div>
                             <div class="col-md-6"></div>
@@ -145,77 +178,53 @@
                     <div class="container" style="padding: 10px;width: 100%;">
                         <div class="dropend justify-content-center align-items-center"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button">Parameter</button>
                             <div class="dropdown-menu" style="width: 60vw;font-size:16px;">
-                                <div class="row">
+                                <div class="row justify-content-center">
                                     <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="low-RED" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                        <div><input class="form-range" type="range" id="start-x" onchange="imgCrop()" min="0" value="50" step="1" max="100">
                                             <div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <p class="text-end" style="text-align: center;">Low Red :</p>
+                                                        <p class="text-end" style="text-align: center;">X :</p>
                                                     </div>
-                                                    <div class="col"><input type="number" id="low-RED-value" style="width: 100%;"></div>
+                                                    <div class="col"><input type="number" id="start-x-value" style="width: 100%;"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="low-GREEN" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                        <div><input class="form-range" type="range" id="start-y" onchange="imgCrop()" min="0" value="50" step="1" max="100">
                                             <div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <p class="text-end" style="text-align: center;">Low Green :</p>
+                                                        <p class="text-end" style="text-align: center;">Y :</p>
                                                     </div>
-                                                    <div class="col"><input type="number" id="low-GREEN-value" style="width: 100%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="low-BLUE" onchange="updateValue()" min="0" max="255" value="100" step="1">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <p class="text-end" style="text-align: center;">Low Blue :</p>
-                                                    </div>
-                                                    <div class="col"><input type="number" id="low-BLUE-value" style="width: 100%;"></div>
+                                                    <div class="col"><input type="number" id="start-y-value" style="width: 100%;"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row justify-content-center">
                                     <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="high-RED" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                        <div><input class="form-range" type="range" id="end-width" onchange="imgCrop()" min="0" value="50" step="1" max="100">
                                             <div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <p class="text-end" style="text-align: center;">High Red :</p>
+                                                        <p class="text-end" style="text-align: center;">Width :</p>
                                                     </div>
-                                                    <div class="col"><input type="number" id="high-RED-value" style="width: 100%;"></div>
+                                                    <div class="col"><input type="number" id="end-width-value" style="width: 100%;"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="high-GREEN" onchange="updateValue()" min="0" max="255" value="100" step="1">
+                                        <div><input class="form-range" type="range" id="end-height" onchange="imgCrop()" min="0" value="50" step="1" max="100">
                                             <div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <p class="text-end" style="text-align: center;">High Green :</p>
+                                                        <p class="text-end" style="text-align: center;">Height :</p>
                                                     </div>
-                                                    <div class="col"><input type="number" id="high-GREEN-value" style="width: 100%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div><input class="form-range" type="range" id="high-BLUE" onchange="updateValue()" min="0" max="255" value="100" step="1">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <p class="text-end" style="text-align: center;">High Blue :</p>
-                                                    </div>
-                                                    <div class="col"><input type="number" id="high-BLUE-value" style="width: 100%;"></div>
+                                                    <div class="col"><input type="number" id="end-height-value" style="width: 100%;"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,15 +240,50 @@
                         </div>
                     </div>
                 </div>
+                <div class="tab-pane" role="tabpanel" id="tab-3">
+                    <div class="container">
+                        <h1>Lesson 3&nbsp;<br>Transformations</h1>
+                        <div class="row">
+                            <div class="col-md-6"><input type="file" id="fileInput-2"></div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding: 10px;width: 100%;">
+                        <div class="dropend justify-content-center align-items-center"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button">Parameter</button>
+                            <div class="dropdown-menu" style="width: 60vw;font-size:16px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <div><input class="form-range" type="range" id="img-degree" onchange="imgRotate()" min="0" max="360" value="0" step="1">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="text-end" style="text-align: center;">Degree&nbsp; :</p>
+                                                    </div>
+                                                    <div class="col"><input type="number" id="img-degree-value" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6"><img id="imageSrc-2" class="img-fluid" src=""></div>
+                            <div class="col-md-6" id="image-container-2"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container gist-container"><script src="https://gist.github.com/panitan103/d81555eff032e53580ee5d420bbb298b.js"></script></div>
+        <div class="container gist-container"><script src="https://gist.github.com/panitan103/16b2ea3b892a6ecac7eda616b0b0345c.js"></script></div>
     </main>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/opencv.js"></script>
     <script src="assets/js/utils.js"></script>
-    <script src="assets/js/Lesson_2_Colors_Spaces.js"></script>
+    <script src="assets/js/Lesson_3_Transformations.js"></script>
 </body>
 
 </html>

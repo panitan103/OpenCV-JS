@@ -52,21 +52,7 @@ inputElement_1.addEventListener('change', (e) => {
 }, false);
  
 imgElement_1.onload = function() {
-    let src = cv.imread(imgElement_1);
-    let dst = new cv.Mat();
-
-    
-
-    
-    let low = new cv.Mat(src.rows, src.cols, src.type(), [low_R, low_G, low_B, 0]);
-    let high = new cv.Mat(src.rows, src.cols, src.type(), [high_R, high_G, high_B, 255]);
-
-    cv.inRange(src, low, high, src);
-    cv.imshow('canvasOutput-1', src);
-
-    dst.delete();
-    low.delete();
-    high.delete();
+    updateValue();
 };
 function updateValue() {
     let src = cv.imread(imgElement_1);
